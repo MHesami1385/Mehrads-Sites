@@ -7,16 +7,26 @@
     margin: 0;
     padding: 0;
     user-select: none;
-
 }
 
 body {
-    background: linear-gradient(320deg, #696969, #4F4F4F, #333333, #252525, #252525, #033933, #03433B, #024C42, #017365, #1E776D);
+    background: linear-gradient(
+            320deg,
+            #696969,
+            #4f4f4f,
+            #333333,
+            #252525,
+            #252525,
+            #033933,
+            #03433b,
+            #024c42,
+            #017365,
+            #1e776d
+    );
     height: 100vh;
     display: grid;
     place-items: center;
     font-family: Dosis;
-
 }
 
 .glass {
@@ -41,19 +51,19 @@ header {
     place-items: center;
 }
 
-h1{
+h1 {
     color: #00f5d4;
     text-shadow: 0 0 20px #00f5d4;
     font-size: 2.5em;
 }
 
-p{
+p {
     color: #5465ff;
     text-shadow: 0 0 20px #5465ff;
     font-size: 1.5em;
 }
 
-hr{
+hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border-color: #eb6666;
@@ -62,41 +72,43 @@ hr{
     height: 1px;
     border-radius: 10px;
 }
+
 section {
     width: 100%;
     height: 85%;
     display: grid;
 }
-article{
+
+article {
     margin-bottom: 20px;
     box-shadow: 0 0 15px #0096c7;
-    border-radius: 10px ;
+    border-radius: 10px;
     display: grid;
     place-items: center;
     height: fit-content;
 }
-h2{
+
+h2 {
     margin: 10px;
     color: #0096c7;
     text-shadow: 0 0 20px #0096c7;
     font-size: 2em;
 }
 
-.projects{
+.projects {
     text-align: center;
     width: 75%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     place-items: center;
 }
 
-a{
+a {
     color: black;
     text-decoration: none;
 }
 
-.buttons{
-    box-shadow: 0 0 30px #d72880;
+.buttons {
     height: 50px;
     width: 50px;
     border-radius: 10px;
@@ -108,5 +120,8 @@ a{
     font-size: 1.5em;
 }
 
-
-
+.buttons:hover {
+    box-shadow: 0 0 5px #d72880,
+    0 0 30px #d72880,
+    0 0 90px #d72880;
+}
