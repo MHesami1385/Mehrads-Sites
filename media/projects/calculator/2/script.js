@@ -22,7 +22,7 @@ const executeOperation = (a, b, op) => {
     }
 };
 
-const handeEvent = (event) => {
+const handelEvent = (event) => {
     const value = event.target.getAttribute("data-value");
     let numInput = parseFloat(currentInput)
 
@@ -71,5 +71,5 @@ const handeEvent = (event) => {
 
 buttons.addEventListener("click", function (event) {
     if (event.target.tagName !== "BUTTON") return false;
-    handeEvent(event);
+    handelEvent(event);
 });
