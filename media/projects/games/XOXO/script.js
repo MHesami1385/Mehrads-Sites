@@ -3,6 +3,8 @@ let players = ["X", "O"];
 let turn;
 let turnIsPlayed = false;
 let thereIsAWinner = false;
+let coordinatesI = [];
+let coordinatesJ = [];
 let n = 3;
 
 for (let i = 1; i <= n; i++) {
@@ -15,7 +17,8 @@ for (let i = 1; i <= n; i++) {
 
 function Start() {
     turn = 1;
-    document.querySelectorAll('td').forEach(td => td.textContent = "");
+    document.querySelectorAll('td').forEach(td =>{ td.textContent = "";
+                                                                                         td.style.backgroundColor ="darkturquoise"});
     isStarted = true;
     document.getElementById('startBtn').disabled = true;
     playerChange();
@@ -41,6 +44,10 @@ function Click(orgI, orgJ) {
             document.getElementById('startBtn').disabled = false;
             document.getElementById('startBtn').textContent = `Again!`;
             isStarted = false;
+            for (let i = 0; i<3;i++) {
+                document.getElementById(`${coordinatesI[i]}_${coordinatesJ[i]}`).style.backgroundColor = "red";
+                document.getElementById(`${coordinatesI[i]}_${coordinatesJ[i]}`).style.color = "white";
+            }
         } else {
             let notEmpty = CheckEmpty();
 
@@ -48,7 +55,7 @@ function Click(orgI, orgJ) {
                 document.getElementById('status').innerHTML = `It's a DRAW!<br>Press "Again!" to play again!`;
                 document.getElementById('startBtn').disabled = false;
                 document.getElementById('startBtn').textContent = `Again!`;
-            } else if(turnIsPlayed)
+            } else if (turnIsPlayed)
                 playerChange();
         }
     }
@@ -64,13 +71,18 @@ function CheckWinner() {
     //افقی
     for (let i = 1; i <= n; i++) {
         let current = document.getElementById(`${i}_${1}`);
-
+        coordinatesI[0] = i;
+        coordinatesJ[0] = 1;
         for (let j = 2; j <= n; j++) {
             let next = document.getElementById(`${i}_${j}`);
 
-            if (current.textContent === next.textContent && current.textContent !== "" && next.textContent !== "")
+            if (current.textContent === next.textContent && current.textContent !== "" && next.textContent !== "") {
                 thereIsAWinner = true;
-            else {
+                coordinatesI.push(i);
+                coordinatesJ.push(j);
+            } else {
+                coordinatesI = [];
+                coordinatesJ = [];
                 thereIsAWinner = false;
                 break;
             }
@@ -81,13 +93,18 @@ function CheckWinner() {
     //عمودی
     for (let j = 1; j <= n; j++) {
         let current = document.getElementById(`${1}_${j}`);
-
+        coordinatesI[0] = 1;
+        coordinatesJ[0] = j;
         for (let i = 2; i <= n; i++) {
             let next = document.getElementById(`${i}_${j}`);
 
-            if (current.textContent === next.textContent && current.textContent !== "" && next.textContent !== "")
+            if (current.textContent === next.textContent && current.textContent !== "" && next.textContent !== "") {
                 thereIsAWinner = true;
-            else {
+                coordinatesJ.push(j);
+                coordinatesI.push(i);
+            } else {
+                coordinatesJ = [];
+                coordinatesI = [];
                 thereIsAWinner = false;
                 break;
             }
@@ -101,9 +118,16 @@ function CheckWinner() {
         let current = document.getElementById(`${1}_${1}`);
         let next = document.getElementById(`${i}_${i}`);
 
-        if (current.textContent === next.textContent && current.textContent !== "" && next.textContent !== "")
+        coordinatesI[0] = 1;
+        coordinatesJ[0] = 1;
+
+        if (current.textContent === next.textContent && current.textContent !== "" && next.textContent !== "") {
             thereIsAWinner = true;
-        else {
+            coordinatesI.push(i);
+            coordinatesJ.push(i);
+        } else {
+            coordinatesI = [];
+            coordinatesJ = [];
             thereIsAWinner = false;
             break;
         }
@@ -116,16 +140,22 @@ function CheckWinner() {
         let current = document.getElementById(`${1}_${3}`);
         let next = document.getElementById(`${i}_${4 - i}`);
 
-        if (current.textContent === next.textContent && current.textContent !== "" && next.textContent !== "")
+        coordinatesI[0]=1;
+        coordinatesJ[0]=3;
+        if (current.textContent === next.textContent && current.textContent !== "" && next.textContent !== "") {
             thereIsAWinner = true;
-        else {
+            coordinatesI.push(i);
+            coordinatesJ.push(4 - i);
+        } else {
+            coordinatesI = [];
+            coordinatesJ = [];
             thereIsAWinner = false;
             break;
         }
     }
 }
 
-function CheckEmpty(){
+function CheckEmpty() {
     for (let i = 1; i <= n; i++) {
         for (let j = 1; j <= n; j++) {
             if (document.getElementById(`${i}_${j}`).textContent === "")
