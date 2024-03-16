@@ -1,0 +1,129 @@
+@font-face {
+    src: url("media/fonts/Dosis/Dosis-VariableFont_wght.ttf");
+    font-family: Dosis;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background: linear-gradient(
+            320deg,
+            #696969,
+            #4f4f4f,
+            #333333,
+            #252525,
+            #252525,
+            #033933,
+            #03433b,
+            #024c42,
+            #017365,
+            #1e776d
+    );
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: Dosis;
+}
+
+.glass {
+    display: grid;
+    place-items: center;
+    margin: 15px 0 15px 0;
+    min-width: 90%;
+    min-height: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.layout {
+    min-width: 90%;
+    min-height: 90%;
+}
+
+header {
+    min-width: 100%;
+    min-height: 15%;
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    color: #00f5d4;
+    text-shadow: 0 0 20px #00f5d4;
+    font-size: 2.5em;
+}
+
+p {
+    color: #5465ff;
+    text-shadow: 0 0 20px #5465ff;
+    font-size: 1.5em;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-color: #eb6666;
+    background-color: #eb6666;
+    box-shadow: 0 0 20px #eb6666;
+    height: 1px;
+    border-radius: 10px;
+}
+
+section {
+    min-width: 100%;
+    min-height: 85%;
+    display: grid;
+}
+
+article {
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px #0096c7;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    height: fit-content;
+}
+
+h2 {
+    margin: 10px;
+    color: #0096c7;
+    text-shadow: 0 0 20px #0096c7;
+    font-size: 2em;
+}
+
+.projects {
+    text-align: center;
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.buttons {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    margin: 10px;
+    color: #d72880;
+    text-shadow: 0 0 20px #d72880;
+    font-size: 1.5em;
+}
+
+.buttons:hover {
+    box-shadow: 0 0 5px #d72880,
+    0 0 30px #d72880,
+    0 0 90px #d72880;
+}

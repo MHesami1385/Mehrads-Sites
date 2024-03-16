@@ -1,0 +1,74 @@
+*{
+    user-select: none;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right,#6a11cb,#2575fc);
+    font-family:"Arial" , sans-serif;
+}
+
+.calculator{
+    width: 340px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    background: #333;
+    overflow: hidden;
+}
+
+.display{
+    background-color: #444;
+    color: #fff;
+    padding: 20px;
+    font-size: 28px;
+    text-align: right;
+    border-bottom: 1px solid #555;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 12px;
+    padding:20px ;
+}
+
+button{
+    background-color: #555;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s,transform 0.2s;
+    outline: none;
+}
+
+button:active{
+    transform: scale(0.95);
+    background-color: #777;
+}
+
+button.zero{
+    grid-column: span 2;
+    border-radius: 50px;
+}
+
+button[data-value="/"],
+button[data-value="×"],
+button[data-value="-"],
+button[data-value="+"],
+button[data-value="="]{
+    background-color: #4a90e2;
+}
+
+button[data-value="AC"],
+button[data-value="+/-"],
+button[data-value="%"]{
+    background-color: #444;
+}
+

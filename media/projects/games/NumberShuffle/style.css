@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #1ABB78AB, #26fed7);
+}
+
+table {
+    border: 1px solid rgb(220, 20, 60);
+    border-radius: 5px;
+}
+
+td {
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgba(224, 126, 23, 0.87);
+    background-color: darkturquoise;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#startBtn {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#startBtn:disabled{
+    cursor: default;
+}
+
+.err{
+    width: 0;
+    height: 0;
+    border: none;
+}
+
