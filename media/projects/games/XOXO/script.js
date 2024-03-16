@@ -18,7 +18,8 @@ for (let i = 1; i <= n; i++) {
 function Start() {
     turn = 1;
     document.querySelectorAll('td').forEach(td =>{ td.textContent = "";
-                                                                                         td.style.backgroundColor ="darkturquoise"});
+                                                                                         td.style.backgroundColor ="darkturquoise";
+                                                                                         td.style.color ="black";});
     isStarted = true;
     document.getElementById('startBtn').disabled = true;
     playerChange();
