@@ -1,61 +1,62 @@
 @font-face {
-    src: url("media/Inconsolata-VariableFont_wdth,wght.ttf");
-    font-family: Inconsolata;
+  src: url("media/Inconsolata-VariableFont_wdth,wght.ttf");
+  font-family: Inconsolata;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    font-size: 25px;
-    font-family: Inconsolata;
-    text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  font-family: Inconsolata;
+  text-align: center;
+  user-select: none;
 }
 
-body{
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    background-image: url("media/BG.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: url("media/BG.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
-table{
-    border: 2px solid coral;
-    border-radius: 10px;
-    background-color: coral;
+table {
+  border: 2px solid coral;
+  border-radius: 10px;
+  background-color: coral;
 }
-td{
-    height: 150px;
-    width: 150px;
-    border-radius: 10px;
-    background-color: darkturquoise;
-    cursor: pointer;
-    font-size: 40px;
-}
-
-#startBtn{
-    padding: 10px;
-    border: none;
-    background-color: cornflowerblue;
-    border-radius: 10px;
-    cursor: pointer;
+td {
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: darkturquoise;
+  cursor: pointer;
+  font-size: 40px;
 }
 
-#status{
-    color: mediumspringgreen;
-}
-#playersTurn{
-    color: crimson;
+#startBtn {
+  padding: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 768px){
-    td{
-        height: 100px;
-        width: 100px;
-    }
-    body{
-        background-image: url("media/BG-Rotated.svg");
-    }
+#status {
+  color: mediumspringgreen;
+}
+#playersTurn {
+  color: crimson;
+}
+
+@media screen and (max-width: 768px) {
+  td {
+    height: 100px;
+    width: 100px;
+  }
+  body {
+    background-image: url("media/BG-Rotated.svg");
+  }
 }
